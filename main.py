@@ -120,6 +120,7 @@ def patrate_perf_mai_mici(n):
 def test_patrate_perf_mai_mici():
     assert patrate_perf_mai_mici(13) == [1, 4, 9]
     assert patrate_perf_mai_mici(6) == [1, 4]
+    assert patrate_perf_mai_mici(17) == [1, 4, 9, 16]
 
 
 def is_square(i: int) -> bool:
