@@ -103,42 +103,6 @@ def test_afisare_nr_sum_c_is_n():
     assert afisare_nr_sum_c_is_n([1, 2, 3, 4], 23) == []
 
 
-def patrate_perf_mai_mici(n):
-    """
-    returneaza o lista formata din patratele perfecte mai mici decat numarul n
-    :param n: un numar intreg
-    :return: o lista formata din patratele perfecte mai mici decat numarul n
-    """
-    new_list = []
-    patrat_perfect = 1
-    while patrat_perfect * patrat_perfect < n:
-        new_list.append(patrat_perfect * patrat_perfect)
-        patrat_perfect = patrat_perfect + 1
-    return new_list
-
-
-def test_patrate_perf_mai_mici
-
-
-def lista_noua_patrate_perf_radicalul_lor(lst: list[int]):
-    """
-    creeaza o lista noua in care
-    :param lst:
-    :return:
-    """
-    list_of_lists = []
-    for i in range(len(lst)):
-        if math.sqrt(lst[i]) == int(math.sqrt(lst[i])):
-            list_of_lists.append(int(math.sqrt(lst[i])))
-        else:
-            list_of_lists.append(patrate_perf_mai_mici(lst[i]))
-    return list_of_lists
-
-
-def test_lista_noua_patrate_perf_radicalul_lor():
-    assert lista_noua_patrate_perf_radicalul_lor([25, 13, 26, 9, -4, 0]) == [5, [1, 4, 9], [1, 4, 9, 16, 25], 3, -4, 0]
-
-
 def main():
     new_list = []
     test_create_number()
