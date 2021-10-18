@@ -5,13 +5,13 @@ def print_meniu():
     print("1. Citirea unei liste de numere întregi.")
     print("2. Afișarea numărului obținut prin concatenarea tuturor numerelor pozitive din listă.")
     print("3.Să se afișeze suma dintre cel mai mare număr din listă și cel mai mic număr din listă.")
-    print("4.Afișarea tuturor numerelor care au suma cifrelor mai mare sau egală decat un număr" 
+    print("4.Afișarea tuturor numerelor care au suma cifrelor mai mare sau egală decat un număr"
           " n citit de la tastatură.")
     print("5.Afișarea listei obținute din lista inițială în care numerele pătrat perfect sunt înlocuite cu"
-            "radicalul acestora. În cazul numerelor care nu sunt pătrat perfect," 
-            "acestea sunt înlocuite cu o listă"
-            "cu numerele pătrat perfect mai mici decât numărul inițial." 
-            "Modificările se aplică doar pe numerele pozitive.")
+          "radicalul acestora. În cazul numerelor care nu sunt pătrat perfect,"
+          "acestea sunt înlocuite cu o listă"
+          "cu numerele pătrat perfect mai mici decât numărul inițial."
+          "Modificările se aplică doar pe numerele pozitive.")
     print("6. iesire")
     print("7. afisarea listei scrise de la tastatura")
 
@@ -99,7 +99,7 @@ def afisare_nr_sum_c_is_n(lst: list[int], n: int):
 
 def test_afisare_nr_sum_c_is_n():
     assert afisare_nr_sum_c_is_n([25, 11, 10, 24, 39], 7) == [25, 39]
-    assert afisare_nr_sum_c_is_n([12, 23, 3,  2, 1, 10], 3) == [12, 23, 3]
+    assert afisare_nr_sum_c_is_n([12, 23, 3, 2, 1, 10], 3) == [12, 23, 3]
     assert afisare_nr_sum_c_is_n([1, 2, 3, 4], 23) == []
 
 
@@ -140,10 +140,13 @@ def test_is_square():
 
 def lista_noua_patrate_perf_radicalul_lor(lst: list[int]):
     """
-    creeaza o lista noua in care numerele pătrat perfect sunt înlocuite cu radicalul acestora. În cazul numerelor care nu sunt pătrat perfect, sunt inlocuite cu
-    o lista cu numerele pătrat perfect mai mici decât numărul inițial. Modificările se aplică doar pe numerele pozitive.
+    creeaza o lista noua in care numerele pătrat perfect sunt înlocuite cu radicalul acestora.
+     În cazul numerelor care nu sunt pătrat perfect, sunt inlocuite cu
+    o lista cu numerele pătrat perfect mai mici decât numărul inițial. 
+    Modificările se aplică doar pe numerele pozitive.
     :param lst: o lista de nr. intregi
-    :return: o lista noua, alcatuita din liste(daca nu sunt patrate perfecte) cu o lista cu numerele pătrat perfect mai mici decât numărul inițial, iar in cazul in care
+    :return: o lista noua, alcatuita din liste(daca nu sunt patrate perfecte) 
+    cu o lista cu numerele pătrat perfect mai mici decât numărul inițial, iar in cazul in care
     este patrat perfect, primeste radicalul lor
     """
     list_of_lists = []
