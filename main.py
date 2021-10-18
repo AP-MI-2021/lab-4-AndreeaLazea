@@ -103,12 +103,73 @@ def test_afisare_nr_sum_c_is_n():
     assert afisare_nr_sum_c_is_n([1, 2, 3, 4], 23) == []
 
 
+def patrate_perf_mai_mici(n):
+    """
+    returneaza o lista formata din patratele perfecte mai mici decat numarul n
+    :param n: un numar intreg
+    :return: o lista formata din patratele perfecte mai mici decat numarul n
+    """
+    new_list = []
+    patrat_perfect = 1
+    while patrat_perfect * patrat_perfect < n:
+        new_list.append(patrat_perfect * patrat_perfect)
+        patrat_perfect = patrat_perfect + 1
+    return new_list
+
+
+def test_patrate_perf_mai_mici():
+    assert patrate_perf_mai_mici(13) == [1, 4, 9]
+    assert patrate_perf_mai_mici(6) == [1, 4]
+
+
+def is_square(i: int) -> bool:
+    """
+    verifica daca un numar e patrat perfect
+    :param i: un numar intreg
+    :return: True, daca e adevarat si False in caz contrar
+    """
+    return i == math.isqrt(i) ** 2
+
+
+def test_is_square():
+    assert is_square(4) is True
+    assert is_square(8) is False
+    assert is_square(16) is True
+
+
+def lista_noua_patrate_perf_radicalul_lor(lst: list[int]):
+    """
+    creeaza o lista noua in care
+    :param lst:
+    :return:
+    """
+    list_of_lists = []
+    for i in range(len(lst)):
+        if lst[i] > 0:
+            if is_square(lst[i]) is True:
+                list_of_lists.append(int(math.sqrt(lst[i])))
+            else:
+                list_of_lists.append(patrate_perf_mai_mici(lst[i]))
+        else:
+            list_of_lists.append(lst[i])
+    return list_of_lists
+
+
+def test_lista_noua_patrate_perf_radicalul_lor():
+    assert lista_noua_patrate_perf_radicalul_lor([25, 13, 26, 9, -4, 0]) == [5, [1, 4, 9], [1, 4, 9, 16, 25], 3, -4, 0]
+    assert lista_noua_patrate_perf_radicalul_lor([36, 12, 4, 9, 100]) == [6, [1, 4, 9], 2, 3, 10]
+    assert lista_noua_patrate_perf_radicalul_lor([81, -3, -4, 6]) == [9, -3, -4, [1, 4]]
+
+
 def main():
     new_list = []
     test_create_number()
     test_sum_cel_mai_mare_si_cel_mai_mic_nr()
     test_afisare_nr_sum_c_is_n()
     test_sum_cif()
+    test_patrate_perf_mai_mici()
+    test_lista_noua_patrate_perf_radicalul_lor()
+    test_is_square()
     while True:
         print_meniu()
         option = input("optiunea dorita este = ")
@@ -122,7 +183,7 @@ def main():
             n = int(input("numarul citit de la tastatura este = "))
             print(afisare_nr_sum_c_is_n(new_list, n))
         elif option == '5':
-            pass
+            print(lista_noua_patrate_perf_radicalul_lor(new_list))
         elif option == '6':
             break
         elif option == '7':
@@ -132,4 +193,3 @@ def main():
 
 
 main()
-
