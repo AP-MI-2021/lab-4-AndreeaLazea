@@ -64,9 +64,9 @@ def test_sum_cel_mai_mare_si_cel_mai_mic_nr():
 
 def sum_cifre(number: int):
     """
-    scrie suma cifrelor unui numar n
+    scrie suma cifrelor unui numar number
     :param number: un numar intreg
-    :return: suma cifrelor unui numar n
+    :return: suma cifrelor unui numar number
     """
     suma = 0
     n = number
