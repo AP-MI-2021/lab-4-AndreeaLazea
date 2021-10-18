@@ -139,9 +139,11 @@ def test_is_square():
 
 def lista_noua_patrate_perf_radicalul_lor(lst: list[int]):
     """
-    creeaza o lista noua in care
-    :param lst:
-    :return:
+    creeaza o lista noua in care numerele pătrat perfect sunt înlocuite cu radicalul acestora. În cazul numerelor care nu sunt pătrat perfect, sunt inlocuite cu
+    o lista cu numerele pătrat perfect mai mici decât numărul inițial. Modificările se aplică doar pe numerele pozitive.
+    :param lst: o lista de nr. intregi
+    :return: o lista noua, alcatuita din liste(daca nu sunt patrate perfecte) cu o lista cu numerele pătrat perfect mai mici decât numărul inițial, iar in cazul in care
+    este patrat perfect, primeste radicalul lor
     """
     list_of_lists = []
     for i in range(len(lst)):
